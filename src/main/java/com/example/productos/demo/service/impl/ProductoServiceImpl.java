@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import com.example.productos.demo.dto.ProductoRequestDto;
 import com.example.productos.demo.dto.ProductoResponseDto;
@@ -19,6 +20,14 @@ import com.example.productos.demo.repository.ICategoriaRepository;
 import com.example.productos.demo.repository.IProductoRepository;
 import com.example.productos.demo.service.IProductoService;
 
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequiredArgsConstructor
+@Service
+@Transactional
 public class ProductoServiceImpl implements IProductoService {
     
     private final IProductoRepository productoRepository = null;
