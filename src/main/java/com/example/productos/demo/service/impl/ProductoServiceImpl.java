@@ -30,8 +30,8 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional
 public class ProductoServiceImpl implements IProductoService {
     
-    private final IProductoRepository productoRepository = null;
-    private final ICategoriaRepository categoriaRepository = null;
+    private final IProductoRepository productoRepository;
+    private final ICategoriaRepository categoriaRepository;
     private final ProductoMapper productoMapper = new ProductoMapper();
     
     @Override

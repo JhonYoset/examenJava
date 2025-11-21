@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CategoriaServiceImpl implements ICategoriaService {
     
-    private final ICategoriaRepository categoriaRepository = null;
+    private final ICategoriaRepository categoriaRepository;
     private final CategoriaMapper categoriaMapper = new CategoriaMapper();
     
     @Override

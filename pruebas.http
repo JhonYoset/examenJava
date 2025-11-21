@@ -1,0 +1,56 @@
+POST http://localhost:8080/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=12345
+###user=user&password=12345
+
+### 2. CREAR CATEGORÍA (Requiere ADMIN)
+POST http://localhost:8080/api/categorias
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzU4NDUwLCJleHAiOjE3NjM3NjIwNTB9.yc95QkCFc6SN_JTKt2cb4ytUR-3eKFkctQrqNWfC0II
+
+{
+  "nombre": "Verduras"
+}
+
+### 3. CREAR PRODUCTO (Requiere ADMIN o USER)
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzU4NDUwLCJleHAiOjE3NjM3NjIwNTB9.yc95QkCFc6SN_JTKt2cb4ytUR-3eKFkctQrqNWfC0II
+
+{
+  "nombre": "Monitor",
+  "stock": 10,
+  "precio": 1500.99,
+  "idCategoria": 1
+}
+
+### 4. OBTENER TODOS LOS PRODUCTOS (Público)
+GET http://localhost:8080/api/productos
+
+### 5. OBTENER PRODUCTO POR ID (Público)
+GET http://localhost:8080/api/productos/1
+
+### 6. OBTENER CATEGORÍAS (Público)
+GET http://localhost:8080/api/categorias
+
+### 7. ACTUALIZAR STOCK (Requiere ADMIN o USER)
+PATCH http://localhost:8080/api/productos/1/stock?stock=5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzU4NDUwLCJleHAiOjE3NjM3NjIwNTB9.yc95QkCFc6SN_JTKt2cb4ytUR-3eKFkctQrqNWfC0II
+
+### 8. BUSCAR CATEGORÍA POR NOMBRE (Público)
+GET http://localhost:8080/api/categorias/buscar?nombre=Electrónicos
+
+### 9. PRODUCTOS POR CATEGORÍA (Público)
+GET http://localhost:8080/api/productos/categoria/1
+
+### 10. PRODUCTOS BAJO STOCK (Público)
+GET http://localhost:8080/api/productos/bajo-stock?cantidad=20
+
+### 11. ELIMINAR PRODUCTO (Requiere ADMIN)
+DELETE http://localhost:8080/api/productos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzU4NDUwLCJleHAiOjE3NjM3NjIwNTB9.yc95QkCFc6SN_JTKt2cb4ytUR-3eKFkctQrqNWfC0II
+
+### 12. ELIMINAR CATEGORÍA (Requiere ADMIN)
+DELETE http://localhost:8080/api/categorias/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzU4NDUwLCJleHAiOjE3NjM3NjIwNTB9.yc95QkCFc6SN_JTKt2cb4ytUR-3eKFkctQrqNWfC0II
