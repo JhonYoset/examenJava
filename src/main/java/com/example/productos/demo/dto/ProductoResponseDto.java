@@ -18,14 +18,13 @@ public class ProductoResponseDto {
     private Integer stock;
     private Long idCategoria;
     private String nombreCategoria;
-    private String codigoProducto;
     private String createdAt;
     private String updatedAt;
     
     
     public ProductoResponseDto(Long idProducto, String nombre, 
                               BigDecimal precio, Integer stock, Long idCategoria, 
-                              String nombreCategoria, String codigoProducto,
+                              String nombreCategoria,
                               java.time.LocalDateTime createdAt, java.time.LocalDateTime updatedAt) {
         this.idProducto = idProducto;
         this.nombre = nombre;
@@ -33,7 +32,6 @@ public class ProductoResponseDto {
         this.stock = stock;
         this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
-        this.codigoProducto = codigoProducto;
         this.createdAt = createdAt != null ? createdAt.toString() : null;
         this.updatedAt = updatedAt != null ? updatedAt.toString() : null;
     }

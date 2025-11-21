@@ -19,9 +19,6 @@ public interface IProductoRepository extends JpaRepository<ProductoEntity, Long>
     @Query("SELECT p FROM ProductoEntity p WHERE p.categoria.idCategoria = :idCategoria")
     List<ProductoEntity> findByCategoria(@Param("idCategoria") Long idCategoria);
     
-    @Query("SELECT p FROM ProductoEntity p WHERE p.codigoProducto = :codigo")
-    Optional<ProductoEntity> findByCodigoProducto(@Param("codigo") String codigo);
-    
     @Query("SELECT p FROM ProductoEntity p WHERE p.stock < :cantidad")
     List<ProductoEntity> findProductosBajoStock(@Param("cantidad") Integer cantidad);
 
