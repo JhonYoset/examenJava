@@ -1,0 +1,23 @@
+
+### CREAR CATEGORÍA (Requiere ADMIN)
+POST http://localhost:8080/api/categorias
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzY1MDE4LCJleHAiOjE3NjM3Njg2MTh9.gqhUCUDaT86dktgOzkMS9FwmYIp3bZfnOLPk3Yu1aw8
+
+{
+  "nombre": "Muebles"
+}
+
+###  
+GET http://localhost:8080/api/categorias
+
+###  
+GET http://localhost:8080/api/categorias/buscar?nombre=Electrónicos
+
+### 
+GET http://localhost:8080/api/productos/categoria/1
+
+### 
+DELETE http://localhost:8080/api/categorias/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzY1MDE4LCJleHAiOjE3NjM3Njg2MTh9.gqhUCUDaT86dktgOzkMS9FwmYIp3bZfnOLPk3Yu1aw8
+

@@ -1,0 +1,38 @@
+
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzY1MDE4LCJleHAiOjE3NjM3Njg2MTh9.gqhUCUDaT86dktgOzkMS9FwmYIp3bZfnOLPk3Yu1aw8
+
+{
+  "nombre": "Mouse",
+  "stock": 10,
+  "precio": 7500.99,
+  "idCategoria": 1
+}
+
+###  
+GET http://localhost:8080/api/productos
+
+###  
+GET http://localhost:8080/api/productos/1
+
+
+###  OBTENER producto dto 
+GET http://localhost:8080/api/productos/dto
+
+
+###  
+PATCH http://localhost:8080/api/productos/1/stock?stock=5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzY1MDE4LCJleHAiOjE3NjM3Njg2MTh9.gqhUCUDaT86dktgOzkMS9FwmYIp3bZfnOLPk3Yu1aw8
+
+###  
+GET http://localhost:8080/api/categorias/buscar?nombre=Electrónicos
+
+### 
+GET http://localhost:8080/api/productos/dto-pageable?page=1&size=5
+Content-Type: application/json
+
+### 
+DELETE http://localhost:8080/api/productos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzY1MDE4LCJleHAiOjE3NjM3Njg2MTh9.gqhUCUDaT86dktgOzkMS9FwmYIp3bZfnOLPk3Yu1aw8
+

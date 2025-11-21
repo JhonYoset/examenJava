@@ -19,8 +19,4 @@ public interface IProductoService extends ICrudCommonsDto<ProductoRequestDto, Pr
     List<ProductoResponseDto> findAllProductosDto();
     
     Page<ProductoResponseDto> findAllProductosDtoPageable(Integer page, Integer size);
-    
-    ProductoResponseDto actualizarStock(Long idProducto, Integer nuevoStock);
-    
-    ProductoResponseDto cambiarEstado(Long idProducto, Boolean activo);
 }

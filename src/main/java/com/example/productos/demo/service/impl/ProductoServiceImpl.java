@@ -53,7 +53,7 @@ public class ProductoServiceImpl implements IProductoService {
         ProductoEntity existing = productoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con ID: " + id));
         
-        // Validar que la categoría existe
+        
         CategoriaProductoEntity categoria = categoriaRepository.findById(dto.getIdCategoria())
                 .orElseThrow(() -> new ResourceNotFoundException("No existe la categoría con ID: " + dto.getIdCategoria()));
         
@@ -124,31 +124,5 @@ public class ProductoServiceImpl implements IProductoService {
         Pageable pageable = PageRequest.of(page, size, sort);
         
         return productoRepository.findAllProductosDtoPageable(pageable);
-    }
-    
-    @Override
-    public ProductoResponseDto actualizarStock(Long idProducto, Integer nuevoStock) {
-        
-        ProductoEntity producto = productoRepository.findById(idProducto)
-                .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con ID: " + idProducto));
-        
-        producto.setStock(nuevoStock);
-        producto.setUpdatedAt(LocalDateTime.now());
-        
-        ProductoEntity updatedProducto = productoRepository.save(producto);
-        return productoMapper.toDto(updatedProducto);
-    }
-    
-    @Override
-    public ProductoResponseDto cambiarEstado(Long idProducto, Boolean activo) {
-        
-        ProductoEntity producto = productoRepository.findById(idProducto)
-                .orElseThrow(() -> new ResourceNotFoundException("No existe el producto con ID: " + idProducto));
-        
-        
-        producto.setUpdatedAt(LocalDateTime.now());
-        
-        ProductoEntity updatedProducto = productoRepository.save(producto);
-        return productoMapper.toDto(updatedProducto);
     }
 }

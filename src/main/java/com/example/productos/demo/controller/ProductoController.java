@@ -43,10 +43,12 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.update(id, dto));
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<ProductoResponseDto> getById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.findById(id));
     }
+    
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
@@ -54,27 +56,32 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.delete(id));
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public ResponseEntity<List<ProductoResponseDto>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.findAll());
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/categoria/{idCategoria}")
     public ResponseEntity<List<ProductoResponseDto>> getByCategoria(@PathVariable Long idCategoria) {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.findByCategoria(idCategoria));
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/bajo-stock")
     public ResponseEntity<List<ProductoResponseDto>> getProductosBajoStock(
             @RequestParam(defaultValue = "10") Integer cantidad) {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.findProductosBajoStock(cantidad));
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/dto")
     public ResponseEntity<List<ProductoResponseDto>> getAllDto() {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.findAllProductosDto());
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/dto-pageable")
     public ResponseEntity<Page<ProductoResponseDto>> getAllDtoPageable(
             @RequestParam(defaultValue = "0") Integer page,
@@ -82,19 +89,4 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(productoService.findAllProductosDtoPageable(page, size));
     }
     
-    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
-    @PatchMapping("/{id}/stock")
-    public ResponseEntity<ProductoResponseDto> updateStock(
-            @PathVariable Long id,
-            @RequestParam Integer stock) {
-        return ResponseEntity.status(HttpStatus.OK).body(productoService.actualizarStock(id, stock));
-    }
-    
-    @PreAuthorize("hasRole('ADMIN')")
-    @PatchMapping("/{id}/estado")
-    public ResponseEntity<ProductoResponseDto> cambiarEstado(
-            @PathVariable Long id,
-            @RequestParam Boolean activo) {
-        return ResponseEntity.status(HttpStatus.OK).body(productoService.cambiarEstado(id, activo));
-    }
 }

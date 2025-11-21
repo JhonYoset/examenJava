@@ -41,10 +41,13 @@ public class CategoriaController {
         return ResponseEntity.status(HttpStatus.OK).body(categoriaService.update(id, dto));
     }
     
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<CategoriaResponseDto> getById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(categoriaService.findById(id));
     }
+    
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
@@ -52,11 +55,13 @@ public class CategoriaController {
         return ResponseEntity.status(HttpStatus.OK).body(categoriaService.delete(id));
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public ResponseEntity<List<CategoriaResponseDto>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(categoriaService.findAll());
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/buscar")
     public ResponseEntity<CategoriaResponseDto> findByNombre(@RequestParam String nombre) {
         return ResponseEntity.status(HttpStatus.OK).body(categoriaService.findByNombre(nombre));

@@ -22,17 +22,9 @@ public interface IProductoRepository extends JpaRepository<ProductoEntity, Long>
     @Query("SELECT p FROM ProductoEntity p WHERE p.stock < :cantidad")
     List<ProductoEntity> findProductosBajoStock(@Param("cantidad") Integer cantidad);
 
-    /* DTO */
     @Query("""
         SELECT new com.example.productos.demo.dto.ProductoResponseDto(
-            p.idProducto,
-            p.nombre,
-            p.precio,
-            p.stock,
-            p.categoria.idCategoria,
-            c.nombre,
-            p.createdAt,
-            p.updatedAt
+            p.idProducto,p.nombre,p.precio,p.stock,p.categoria.idCategoria,c.nombre,p.createdAt,p.updatedAt
         )
         FROM ProductoEntity p
         JOIN CategoriaProductoEntity c ON p.categoria.idCategoria = c.idCategoria
@@ -41,34 +33,17 @@ public interface IProductoRepository extends JpaRepository<ProductoEntity, Long>
 
     @Query("""
         SELECT new com.example.productos.demo.dto.ProductoResponseDto(
-            p.idProducto,
-            p.nombre,
-            p.precio,
-            p.stock,
-            p.categoria.idCategoria,
-            c.nombre,
-            p.createdAt,
-            p.updatedAt
-        )
+            p.idProducto,p.nombre,p.precio,p.stock,p.categoria.idCategoria,c.nombre,p.createdAt,p.updatedAt)
         FROM ProductoEntity p
-        JOIN CategoriaProductoEntity c ON p.categoria.idCategoria = c.idCategoria
-        """)
+        JOIN CategoriaProductoEntity c ON p.categoria.idCategoria = c.idCategoria""")
     Page<ProductoResponseDto> findAllProductosDtoPageable(Pageable pageable);
 
     @Query("""
         SELECT new com.example.productos.demo.dto.ProductoResponseDto(
-            p.idProducto,
-            p.nombre,
-            p.precio,
-            p.stock,
-            p.categoria.idCategoria,
-            c.nombre,
-            p.createdAt,
-            p.updatedAt
+            p.idProducto,p.nombre,p.precio,p.stock,p.categoria.idCategoria,c.nombre,p.createdAt,p.updatedAt
         )
         FROM ProductoEntity p
         JOIN CategoriaProductoEntity c ON p.categoria.idCategoria = c.idCategoria
-        WHERE c.idCategoria = :idCategoria
-        """)
+         WHERE c.idCategoria = :idCategoria """)
     List<ProductoResponseDto> findProductosByCategoriaDto(@Param("idCategoria") Long idCategoria);
 }
