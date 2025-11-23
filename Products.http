@@ -1,7 +1,7 @@
 
 POST http://localhost:8080/api/productos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzNzY1MDE4LCJleHAiOjE3NjM3Njg2MTh9.gqhUCUDaT86dktgOzkMS9FwmYIp3bZfnOLPk3Yu1aw8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzOTI0NTAwLCJleHAiOjE3NjM5MjgxMDB9.JI3KjotVB9ym_nbwgmMajLry3Ke2ha5kR6ak-4GfU9M
 
 {
   "nombre": "Mouse",

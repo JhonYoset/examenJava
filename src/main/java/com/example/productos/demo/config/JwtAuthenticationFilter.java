@@ -1,6 +1,9 @@
 package com.example.productos.demo.config;
 
+
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.example.productos.demo.Jwt.JwtUtil;
+import com.example.productos.demo.exception.ExceptionDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -16,10 +19,6 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
-
-import com.example.productos.demo.Jwt.JwtUtil;
-import com.example.productos.demo.exception.ExceptionDto;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

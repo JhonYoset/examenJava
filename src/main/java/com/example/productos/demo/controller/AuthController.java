@@ -19,8 +19,13 @@ import com.example.productos.demo.exception.ValidatedRequestException;
 import com.example.productos.demo.models.User;
 import com.example.productos.demo.service.IUserService;
 
+import jakarta.annotation.security.PermitAll;
+import lombok.RequiredArgsConstructor;
+
 @RestController
+@PermitAll
 @RequestMapping("/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
  
