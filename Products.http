@@ -1,10 +1,10 @@
 
 POST http://localhost:8080/api/productos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzOTI0NTAwLCJleHAiOjE3NjM5MjgxMDB9.JI3KjotVB9ym_nbwgmMajLry3Ke2ha5kR6ak-4GfU9M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzOTQyNjI0LCJleHAiOjE3NjM5NDYyMjR9.m5JLWLt7zt3uLpNNALyqcGDg338gKtzsoVOYKiOFpck
 
 {
-  "nombre": "Mouse",
+  "nombre": "Mouse BLUETOOH",
   "stock": 10,
   "precio": 7500.99,
   "idCategoria": 1

@@ -2,9 +2,10 @@
 ### CREAR CATEGORÍA (Requiere ADMIN)
 POST http://localhost:8080/api/categorias
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzOTI0Mzg3LCJleHAiOjE3NjM5Mjc5ODd9.mr1ojYR8R9FgrE-M-Xx-geuAr0MQHHs6y-pW5wkFq3Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJGQUNUT1JfUEFTU1dPUkQiXSwiaWF0IjoxNzYzOTQyNjI0LCJleHAiOjE3NjM5NDYyMjR9.m5JLWLt7zt3uLpNNALyqcGDg338gKtzsoVOYKiOFpck
+
 {
-  "nombre": "Ropa"
+  "nombre": "utiles"
 }
 
 ###  

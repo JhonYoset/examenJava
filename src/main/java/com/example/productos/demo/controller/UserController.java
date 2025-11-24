@@ -25,15 +25,14 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class UserController {
-
-    private IUserRepository userRepository;
-    private IRoleRepository roleRepository;
-    private IUserRoleRepository userRoleRepository;
-    private PasswordEncoder passwordEncoder;
+    
+    private final IUserRepository userRepository;
+    private final IRoleRepository roleRepository;
+    private final IUserRoleRepository userRoleRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody UserRegisterDto dto) {
-
         if (userRepository.getByUserName(dto.getUsername()).isPresent()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("El usuario '" + dto.getUsername() + "' ya existe");
@@ -47,7 +46,9 @@ public class UserController {
 
         User savedUser = userRepository.save(newUser);
 
-        String roleName = dto.getRole() != null && !dto.getRole().isEmpty() ? dto.getRole().toUpperCase() : "USER";
+        String roleName = dto.getRole() != null && !dto.getRole().isEmpty() 
+            ? dto.getRole().toUpperCase() 
+            : "USER";
 
         Role role = roleRepository.findById(getRoleIdByName(roleName))
                 .orElseThrow(() -> new RuntimeException("Rol no encontrado: " + roleName));
